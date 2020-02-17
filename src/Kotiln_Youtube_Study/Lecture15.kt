@@ -12,7 +12,7 @@ package Kotiln_Youtube_Study
 * apply <-> also
 * run <-> let
 *
-*
+* 스코프 함수는 인스턴스의 속성이나 함수를 scope내에서 깔끔하게 분리하여 사용할수있다는 점 때문에 코드의 가독성을 향상시키는 장점이 있다
 * */
 fun main(){
    /* var c: (String) ->Unit={
