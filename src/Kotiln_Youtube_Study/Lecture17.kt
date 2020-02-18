@@ -9,28 +9,41 @@ package Kotiln_Youtube_Study
 */
 
 fun main(){
-    EventPrinter().start()
+    EventPrinter().start()//EventPrinter의 인스턴트 생성
 }
-
 interface EventListener{
     fun onEvent(count:Int)
 }
 
 class Counter2(var listener:EventListener){
-     fun count(){
-         for(i in 1..100){
-             if(i % 5 == 0) listener.onEvent(i)
-         }
-     }
+    fun count(){
+        for(i in 1..100){
+            if(i%5 == 0) listener.onEvent(i)
+        }//for
+    }
 }
 
-class EventPrinter: EventListener {
+/*익명객체*/
+class EventPrinter{
+    fun start(){
+        var counter=Counter2(object:EventListener{ //익명 객체로 EventListener를 받아 익명리스너안에서 onEvent를 override
+            override fun onEvent(count:Int){
+                println("${count}")
+            }
+        })
+        counter.count()
+    }
+}
+
+/*class EventPrinter : EventListener{
     override fun onEvent(count:Int){
-        print("${count}-")
+        println("${count}")
     }
     fun start(){
         var counter=Counter2(this)
         counter.count()
+        *//*this 는 EventPrinter객체 자신을 나타내지만
+         받는쪽에서 EventListener만 요규했기때문에 여기 this에서는 EventListener만 넘겨주게 된다
+         이를 객체지향의 다형성이라고 한다. *//*
     }
-}
-/*다음시간에 계속 ...*/
+}*/
