@@ -42,6 +42,7 @@ fun main(){
     var c=Product("콜라",1000)
     var d=Product("콜라",1000)
     var e=c
+
     var f=Product("사이다",1000)
 
     println(c==d) //true
