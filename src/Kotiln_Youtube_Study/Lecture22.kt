@@ -64,5 +64,5 @@ class Product(var name:String,var price:Int){
         }
     }
 }
-/*내용의 통일성은 자동으로 판단되는것이 아닌
+/*내용의 통일성은 자동으로 판단되는것이 아닌dd
 * 코틀린의 모든 클래스가 내부적으로 상속받는 Any라는 최상위 클래스의 equals함수가 반환하는 Boolean값으로 판단하는것*/
